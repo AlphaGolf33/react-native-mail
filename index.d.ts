@@ -39,9 +39,6 @@ export namespace Mailer {
     options: {
       subject: string;
       body: string;
-      /**
-       * Apply style only on iOS
-       */
       isHTML: boolean;
       recipients?: [string];
       ccRecipients?: [string];
