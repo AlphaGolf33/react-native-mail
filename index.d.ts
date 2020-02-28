@@ -49,11 +49,11 @@ export namespace Mailer {
       attachments?: Attachment[];
     },
     callback: (
-      error: string,
+      error?: string,
       /**
        * On Android, the callback will only be called if an error occurs. The event argument is unused!
        */
-      event: string
+      event?: string
     ) => void
   ): void;
 }
