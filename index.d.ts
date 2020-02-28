@@ -1,3 +1,39 @@
+export interface Attachment {
+  /**
+   * The absolute path of the file from which to read data.
+   */
+  path: string;
+  /**
+   * Mime Type: jpg, png, doc, docx, ppt, pptx, html, csv, pdf, vcard, json, zip, text, mp3, wav, aiff, flac, ogg, xls, ics, xlsx
+   */
+  type:
+    | "jpg"
+    | "png"
+    | "doc"
+    | "docx"
+    | "ppt"
+    | "pptx"
+    | "html"
+    | "csv"
+    | "pdf"
+    | "vcard"
+    | "json"
+    | "zip"
+    | "text"
+    | "mp3"
+    | "wav"
+    | "aiff"
+    | "flac"
+    | "ogg"
+    | "xls"
+    | "ics"
+    | "xlsx";
+  /**
+   * Optional: Custom filename for attachment
+   */
+  name?: string;
+}
+
 export namespace Mailer {
   function mail(
     options: {
@@ -10,41 +46,7 @@ export namespace Mailer {
       recipients?: [string];
       ccRecipients?: [string];
       bccRecipients?: [string];
-      attachments?: {
-        /**
-         * The absolute path of the file from which to read data.
-         */
-        path: string;
-        /**
-         * Mime Type: jpg, png, doc, docx, ppt, pptx, html, csv, pdf, vcard, json, zip, text, mp3, wav, aiff, flac, ogg, xls, ics, xlsx
-         */
-        type:
-          | "jpg"
-          | "png"
-          | "doc"
-          | "docx"
-          | "ppt"
-          | "pptx"
-          | "html"
-          | "csv"
-          | "pdf"
-          | "vcard"
-          | "json"
-          | "zip"
-          | "text"
-          | "mp3"
-          | "wav"
-          | "aiff"
-          | "flac"
-          | "ogg"
-          | "xls"
-          | "ics"
-          | "xlsx";
-        /**
-         * Optional: Custom filename for attachment
-         */
-        name?: string;
-      }[];
+      attachments?: Attachment[];
     },
     callback: (
       error: string,
