@@ -13,9 +13,30 @@ export namespace Mailer {
          */
         path: string;
         /**
-         * Mime Type: jpg, png, doc, ppt, html, pdf, csv
+         * Mime Type: jpg, png, doc, docx, ppt, pptx, html, csv, pdf, vcard, json, zip, text, mp3, wav, aiff, flac, ogg, xls, ics, xlsx
          */
-        type: string;
+        type:
+          | "jpg"
+          | "png"
+          | "doc"
+          | "docx"
+          | "ppt"
+          | "pptx"
+          | "html"
+          | "csv"
+          | "pdf"
+          | "vcard"
+          | "json"
+          | "zip"
+          | "text"
+          | "mp3"
+          | "wav"
+          | "aiff"
+          | "flac"
+          | "ogg"
+          | "xls"
+          | "ics"
+          | "xlsx";
         /**
          * Optional: Custom filename for attachment
          */
